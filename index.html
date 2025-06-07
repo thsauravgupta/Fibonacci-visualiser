@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recursion Visualizer: Fibonacci with Call Stack</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <h1>Recursion Visualizer: Fibonacci</h1>
+  <div id="desc">
+    <b>How it works:</b> Step through the recursive calculation of <code>fib(n)</code>. The call stack and recursion tree update as you go. 
+    <br>Try different <code>n</code> (max 8 for performance).
+  </div>
+
+  <div id="controls">
+    <input type="number" id="inputN" value="4" min="1" max="8" style="width: 60px;">
+    <button onclick="startStepByStep()">Start</button>
+    <button onclick="prevStep()" id="prevBtn" disabled>Previous Step</button>
+    <button onclick="nextStep()" id="nextBtn" disabled>Next Step</button>
+    <button onclick="resetAll()" id="resetBtn" disabled>Reset</button>
+  </div>
+
+  <div>
+    <h3>Call Stack</h3>
+    <div id="stack"></div>
+  </div>
+
+  <div id="tree-container">
+    <svg id="arrows"></svg>
+    <div id="tree"></div>
+  </div>
+
+  <svg style="height:0;width:0;position:absolute;">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" style="fill:#666;" />
+      </marker>
+    </defs>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>

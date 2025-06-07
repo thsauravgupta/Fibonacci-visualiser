@@ -1,0 +1,119 @@
+    body {
+      font-family: sans-serif;
+      background-color: #f0f2f5;
+      text-align: center;
+      padding: 20px;
+    }
+    #controls {
+      margin-bottom: 20px;
+    }
+    #tree-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      min-height: 300px;
+    }
+    #arrows {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .node {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 6px;
+      font-weight: bold;
+      min-width: 60px;
+      text-align: center;
+      transition: background 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+    .node.call {
+      background-color: #3498db;
+    }
+    .node.return {
+      background-color: #27ae60;
+    }
+    .node.current {
+      background-color: #f39c12 !important;
+      color: #fff;
+    }
+    .children {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    #stack {
+      background: #fff;
+      border: 2px solid #ddd;
+      width: 220px;
+      margin: 0 auto;
+      text-align: left;
+      padding: 10px;
+      border-radius: 10px;
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: 30px;
+    }
+    .stack-item {
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+      background: #ecf0f1;
+      margin-bottom: 2px;
+      border-radius: 4px;
+    }
+    .stack-item.top {
+      background: #f39c12;
+      color: #fff;
+      font-weight: bold;
+    }
+    button {
+      margin: 0 8px;
+      padding: 8px 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      background: #2980b9;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:disabled {
+      background: #bbb;
+      cursor: not-allowed;
+    }
+    #desc {
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      color: #444;
+      background: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    @media (max-width: 700px) {
+      #tree-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      #stack {
+        width: 95vw;
+      }
+    }
+
+    .arrow-line {
+      stroke: #666;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
